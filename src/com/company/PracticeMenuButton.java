@@ -10,24 +10,32 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class PracticeMenuButton extends Application {
     // Fields
-    // - - -
+    ImageView ImgView;
+    Image img1;
+    Image img2;
+    Image img3;
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
         // Set Program Title
         primaryStage.setTitle("MenuButton Trial");
         // ImageView
-        FileInputStream input = new FileInputStream("C:/Users/Alonso/IdeaProjects/UserInterface/images/bao.PNG");
-        Image image = new Image(input);
-        ImageView imageView = new ImageView(image);
+        FileInputStream input1 = new FileInputStream("C:/Users/Alonso/IdeaProjects/UserInterface/images/bao.PNG");
+        FileInputStream input2 = new FileInputStream("C:/Users/Alonso/IdeaProjects/UserInterface/images/flag.jfif");
+        FileInputStream input3 = new FileInputStream("C:/Users/Alonso/IdeaProjects/UserInterface/images/bell.jpg");
+        img1 = new Image(input1);
+        img2 = new Image(input2);
+        img3 = new Image(input3);
+        ImgView = new ImageView(img1);
         // Drop Down Menu Items
-        MenuItem menuItem1 = new MenuItem("Option 1");
-        MenuItem menuItem2 = new MenuItem("Option 2");
-        MenuItem menuItem3 = new MenuItem("Option 3");
+        MenuItem menuItem1 = new MenuItem("Bao");
+        MenuItem menuItem2 = new MenuItem("Flag");
+        MenuItem menuItem3 = new MenuItem("Bell");
         // Create MenuButton
-        MenuButton menuButton = new MenuButton("Bao Button", imageView, menuItem1, menuItem2, menuItem3);
+        MenuButton menuButton = new MenuButton("Bao Button", ImgView, menuItem1, menuItem2, menuItem3);
         menuItem1.setOnAction(actionEvent -> { userClickedItem1(); });
         menuItem2.setOnAction(actionEvent -> { userClickedItem2(); });
         menuItem3.setOnAction(actionEvent -> { userClickedItem3(); });
@@ -43,9 +51,18 @@ public class PracticeMenuButton extends Application {
         Application.launch(args);
     }
     // print in Console "Nice" when Option1 is clicked
-    private void userClickedItem1() { System.out.println("You click Option 1! Nice"); }
+    private void userClickedItem1() {
+        System.out.println("You click Option 1! Nice");
+        ImgView.setImage(img1);
+    }
     // print in Console "Cool" when Option2 is clicked
-    private void userClickedItem2() { System.out.println("You click Option 2! Cool"); }
+    private void userClickedItem2() {
+        System.out.println("You click Option 2! Cool");
+        ImgView.setImage(img2);
+    }
     // print in Console "Sweet" when Option3 is clicked
-    private void userClickedItem3() { System.out.println("You click Option 3! Sweet"); }
+    private void userClickedItem3() {
+        System.out.println("You click Option 3! Sweet");
+        ImgView.setImage(img3);
+    }
 }
