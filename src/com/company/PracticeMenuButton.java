@@ -10,7 +10,6 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class PracticeMenuButton extends Application {
     // Fields
