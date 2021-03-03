@@ -88,10 +88,12 @@ public class PracticeMenuButton extends Application {
         ImgView1.setFitHeight(200);
         ImgView1.setFitWidth(200);
     }
-    // print in Console "Sweet" when Option3 is clicked
+    // print in Console "CAT v. DOG" and changes image of Cat/Dog when toggled
     private void userClickedItem4() {
         System.out.println("You toggled Option 4! CAT v. DOG");
         boolean isSelected = toggleImage.isSelected();
+        // IF BUTTON IS TOGGLED, DISPLAY CAT
+        // IF BUTTON IS NOT TOGGLED, DISPLAY DOG
         if (isSelected) {
             ImgView2.setImage(img4);
             ImgView2.setFitHeight(200);
